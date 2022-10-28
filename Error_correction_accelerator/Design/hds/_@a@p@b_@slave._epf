@@ -1,0 +1,2 @@
+DEFAULT_ARCHITECTURE atom APB_Slave
+DEFAULT_FILE atom APB_Slave.v

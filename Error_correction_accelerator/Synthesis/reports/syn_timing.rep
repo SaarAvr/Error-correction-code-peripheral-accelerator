@@ -1,0 +1,84 @@
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	controller/U5/A controller/U5/Y controller/U82/B controller/U82/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'controller/U5'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ecc_enc_dec
+Version: O-2018.06-SP4
+Date   : Tue Dec 28 18:34:11 2021
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: Register_Bank/CTRL_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: controller/Decoder/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ecc_enc_dec        tsmc18_wl50           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.60       0.60
+  Register_Bank/CTRL_reg[0]/CK (DFFRHQX1)                 0.00       0.60 r
+  Register_Bank/CTRL_reg[0]/Q (DFFRHQX1)                  2.54       3.14 r
+  Register_Bank/CTRL[0] (Register_Bank_AMBA_WORD32_AMBA_ADDR_WIDTH20)
+                                                          0.00       3.14 r
+  controller/CTRL[0] (controller_AMBA_WORD32_DATA_WIDTH32)
+                                                          0.00       3.14 r
+  controller/U84/Y (INVX1)                                1.11       4.25 f
+  controller/U83/Y (NOR2X1)                               1.49       5.74 r
+  controller/U63/Y (INVX1)                                1.53       7.27 f
+  controller/U80/Y (OAI222XL)                             1.54       8.81 r
+  controller/U5/Y (NAND2X4)                               0.17       8.98 f
+  controller/U82/Y (NAND2BX1)                             1.65      10.63 r
+  controller/U62/Y (NAND2X1)                              1.07      11.70 f
+  controller/U59/Y (OAI21XL)                              1.91      13.61 r
+  controller/U53/Y (INVX1)                                1.05      14.66 f
+  controller/U52/Y (CLKINVX3)                             2.30      16.96 r
+  controller/U94/Y (OAI2BB2X2)                            1.38      18.33 f
+  controller/Decoder/data_in[6] (Decoder_AMBA_WORD32_DATA_WIDTH32)
+                                                          0.00      18.33 f
+  controller/Decoder/U85/Y (INVX1)                        1.61      19.94 r
+  controller/Decoder/U188/Y (XNOR2X1)                     1.75      21.69 r
+  controller/Decoder/U191/Y (XNOR2X1)                     1.61      23.30 r
+  controller/Decoder/U50/Y (XOR2X1)                       0.97      24.27 r
+  controller/Decoder/U49/Y (XOR2X1)                       1.12      25.39 r
+  controller/Decoder/U197/Y (XNOR2X1)                     1.25      26.64 r
+  controller/Decoder/U196/Y (NAND3BX1)                    0.80      27.44 f
+  controller/Decoder/U42/Y (NOR2X1)                       1.99      29.43 r
+  controller/Decoder/U20/Y (INVX1)                        1.30      30.73 f
+  controller/Decoder/U44/Y (NOR2X1)                       2.06      32.78 r
+  controller/Decoder/U22/Y (INVX1)                        1.01      33.79 f
+  controller/Decoder/U195/Y (NOR4BX1)                     1.22      35.01 r
+  controller/Decoder/U176/Y (AOI221X1)                    0.56      35.58 f
+  controller/Decoder/U175/Y (NAND2X1)                     0.64      36.22 r
+  controller/Decoder/data_out_reg[3]/D (DFFRHQX1)         0.00      36.22 r
+  data arrival time                                                 36.22
+
+  clock clk (rise edge)                                  50.00      50.00
+  clock network delay (ideal)                             0.60      50.60
+  clock uncertainty                                      -0.10      50.50
+  controller/Decoder/data_out_reg[3]/CK (DFFRHQX1)        0.00      50.50 r
+  library setup time                                     -0.25      50.25
+  data required time                                                50.25
+  --------------------------------------------------------------------------
+  data required time                                                50.25
+  data arrival time                                                -36.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                       14.03
+
+
+1

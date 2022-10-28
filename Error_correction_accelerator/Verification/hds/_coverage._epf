@@ -1,0 +1,2 @@
+DEFAULT_ARCHITECTURE atom coverage
+DEFAULT_FILE atom coverage.sv

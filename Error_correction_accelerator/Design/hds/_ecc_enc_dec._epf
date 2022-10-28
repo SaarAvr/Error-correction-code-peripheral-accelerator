@@ -1,0 +1,2 @@
+DEFAULT_ARCHITECTURE atom ecc_enc_dec
+DEFAULT_FILE atom ecc_enc_dec.v
